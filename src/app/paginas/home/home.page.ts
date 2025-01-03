@@ -1,13 +1,27 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
-import { NavbarComponent } from 'src/app/componentes/navbar/navbar.component';
+import { IonContent, IonButton, IonHeader, IonToolbar, IonIcon, IonFab,
+  IonFabButton, 
+} from '@ionic/angular/standalone';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, NavbarComponent],
+  imports: [ IonContent, IonButton, IonHeader, IonToolbar, IonIcon, IonFab, IonFabButton],
 })
 export class HomePage {
-  constructor() {}
+  constructor(private rutas: NavController) {}
+
+  irAGestionCitas(){
+    console.log("ir a citas")
+    this.rutas.navigateForward('/gestion-citas')
+  }
+
+  irAConfiguraciones(){
+    console.log("ir a configuraciones")
+    this.rutas.navigateForward('configuraciones')
+  }
+  
 }

@@ -1,4 +1,29 @@
 <ion-content [fullscreen]="true">
-  <app-navbar></app-navbar>
+
+<div class="container">
+  <ion-header>
+    <ion-toolbar>
+      <div class="icci">
+        <p class="t-citas">Citas</p>
+
+        <ion-button (click)="irAConfiguraciones()" fill="clear">
+          <ion-icon  name="settings-outline"></ion-icon>
+        </ion-button>
+
+      </div>
+    </ion-toolbar>
+  </ion-header>
+</div>
+
   <h1>soy el home</h1>
+
+
+
+  <ion-fab>
+    <ion-fab-button (click)="irAGestionCitas()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
 </ion-content>

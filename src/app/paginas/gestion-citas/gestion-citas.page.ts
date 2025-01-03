@@ -1,19 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import { NavbarComponent } from 'src/app/componentes/navbar/navbar.component'
+import { IonContent, IonHeader, IonToolbar, IonButton, IonIcon} from '@ionic/angular/standalone';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-gestion-citas',
   templateUrl: './gestion-citas.page.html',
   styleUrls: ['./gestion-citas.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, NavbarComponent]
+  imports: [IonContent, CommonModule, FormsModule, IonHeader, IonToolbar, IonButton, IonIcon]
 })
 export class GestionCitasPage implements OnInit {
 
-  constructor() { }
+  constructor(private rutas: NavController) { }
+
+  irAHome(){
+    console.log("ir a home")
+    this.rutas.navigateForward('/home')
+  }
+
+
 
   ngOnInit() {
   }
