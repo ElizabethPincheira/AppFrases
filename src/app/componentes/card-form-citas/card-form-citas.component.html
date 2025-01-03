@@ -3,15 +3,21 @@
     <ion-card-title>Card Title</ion-card-title>
   </ion-card-header>
 
-  <ion-item>
-    <ion-input [(ngModel)]="ingresaCita" label="Cita"></ion-input>
-  </ion-item>
+  <form #miFormulario="ngForm" (ngSubmit)="agregar()">
+    <ion-item>
+      <ion-input [(ngModel)]="ingresaCita" name="cita" label="Cita" required></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-input [(ngModel)]="ingresaAutor" label="Autor" placeholder="Bon Clay"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="ingresaAutor" name="autor" label="Autor" placeholder="Bon Clay" required></ion-input>
+    </ion-item>
 
-  <ion-button (click)="agregar()" fill="clear">Agregar +</ion-button>
+    <ion-button type="submit" fill="clear" [disabled]="miFormulario.invalid">Agregar +</ion-button>
+  </form>
+
+<p *ngIf="mensajeFrase === true">El campo frase debe tener al menos 5 caracteres</p> 
+<p *ngIf="mensajeAutor === true">El campo Autor debe tener al menos 2 caracteres</p> 
 
 
 </ion-card>
+
