@@ -15,9 +15,9 @@ export class ConfiguracionesPage implements OnInit {
 
   constructor(private rutas: NavController) { }
 
-  irAGestionCitas(){
-    console.log("ir a citas")
-    this.rutas.navigateForward('/gestion-citas')
+  irAHome(){
+    console.log("ir a home")
+    this.rutas.navigateForward('/home')
   }
 
   ngOnInit() {
