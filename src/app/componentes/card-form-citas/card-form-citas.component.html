@@ -4,12 +4,14 @@
   </ion-card-header>
 
   <ion-item>
-    <ion-input label="Cita"></ion-input>
+    <ion-input [(ngModel)]="ingresaCita" label="Cita"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-input label="Autor" placeholder="Bon Clay"></ion-input>
+    <ion-input [(ngModel)]="ingresaAutor" label="Autor" placeholder="Bon Clay"></ion-input>
   </ion-item>
-  <p>Agregar +</p>
+
+  <ion-button (click)="agregar()" fill="clear">Agregar +</ion-button>
+
 
 </ion-card>
