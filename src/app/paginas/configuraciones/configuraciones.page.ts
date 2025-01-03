@@ -1,19 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import {NavbarComponent} from 'src/app/componentes/navbar/navbar.component'
+import { IonContent, IonHeader, IonToolbar, IonButton, IonIcon } from '@ionic/angular/standalone';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-configuraciones',
   templateUrl: './configuraciones.page.html',
   styleUrls: ['./configuraciones.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, NavbarComponent]
+  imports: [IonContent, CommonModule, FormsModule, IonHeader, IonToolbar, IonButton, IonIcon]
 })
 export class ConfiguracionesPage implements OnInit {
 
-  constructor() { }
+  constructor(private rutas: NavController) { }
+
+  irAGestionCitas(){
+    console.log("ir a citas")
+    this.rutas.navigateForward('/gestion-citas')
+  }
 
   ngOnInit() {
   }
